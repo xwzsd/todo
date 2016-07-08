@@ -5,5 +5,12 @@
   <%= @todo_list.title %>
 </p>
 
+<div id="todo_tasks_wrapper">
+	<%= render @todo_list.todo_tasks %>
+	<div id="form">
+	<%= render "todo_tasks/form" %>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
