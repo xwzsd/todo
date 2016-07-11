@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Title:</h3>
+  </div>
+  <div class="panel-body"><%= @todo_list.title %></div>
+</div>
 
-<div id="todo_tasks_wrapper">
+<div id="todo_items_wrapper">
 	<%= render @todo_list.todo_tasks %>
 	<div id="form">
-	<%= render "todo_tasks/form" %>
-  </div>
+		<%= render "todo_tasks/form" %>
+	</div>
 </div>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |

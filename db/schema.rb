@@ -11,25 +11,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706211007) do
+ActiveRecord::Schema.define(version: 20160711122851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "todo_lists", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "todo_attachments", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "todo_comment_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "todo_tasks", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "todo_list_id"
+  add_index "todo_attachments", ["todo_comment_id"], name: "index_todo_attachments_on_todo_comment_id", using: :btree
+
+  create_table "todo_comments", force: :cascade do |t|
+    t.integer  "todo_task_id"
+    t.text     "body"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  add_index "todo_comments", ["todo_task_id"], name: "index_todo_comments_on_todo_task_id", using: :btree
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.integer  "priority"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "todo_lists", ["user_id"], name: "index_todo_lists_on_user_id", using: :btree
+
+  create_table "todo_tasks", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "priority"
+    t.date     "due_date"
+    t.integer  "todo_list_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "completed_at"
+  end
+
   add_index "todo_tasks", ["todo_list_id"], name: "index_todo_tasks_on_todo_list_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "provider",               default: "email", null: false
+    t.string   "uid",                    default: "",      null: false
+    t.string   "encrypted_password",     default: "",      null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,       null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "image"
+    t.string   "email"
+    t.json     "tokens"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
+
+  add_foreign_key "todo_attachments", "todo_comments"
+  add_foreign_key "todo_comments", "todo_tasks"
+  add_foreign_key "todo_lists", "users"
   add_foreign_key "todo_tasks", "todo_lists"
 end
