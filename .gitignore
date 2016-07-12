@@ -6,12 +6,15 @@
 /db/*.sqlite3-journal
 
 # Игнорирование всех логов и временных файлов.
+/log/*
 /log/*.log
 /tmp
 
 # Игнорирование прочих ненужных файлов.
 database.yml
 doc/
+/lib/assets/bower_components
+/public/uploads
 *.swp
 *~
 .project

@@ -19,6 +19,7 @@ gem 'active_model_serializers'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cancancan', '~> 1.10'
+gem 'bower-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
