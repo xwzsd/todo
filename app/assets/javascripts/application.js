@@ -11,7 +11,28 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require moment
+//= require angular
+//= require angular-rails-templates
+//= require angular-ui-router
+//= require angular-resource
+//= require angular-animate
+//= require angular-ui-sortable
+
+
+//= require ng-token-auth
+//= require angular-cookie
+//= require angular-toastr
+//= require angular-loading-bar
+
+//= require ng-file-upload
+
+//= require_tree ./services
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require_tree ./templates
 //= require_tree .

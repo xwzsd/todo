@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='todoApp'>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title>Todo</title>
+	  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  	<%= favicon_link_tag 'favicon.ico' %>
+	  	<%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div ng-cloak ng-include="'_nav.html'"></div>
+    <div class='container'>
+      <div class='row'>
+        <h1>
+          Todo List
+          <br>
+          <small>From Ruby Garage</small>
+        </h1>
+        <ui-view></ui-view>
+      </div>
+    </div>
+  </body>
+</html>
+<div class='copyright text-center'>&copy; Ruby Garage</div>
