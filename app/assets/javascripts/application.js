@@ -14,7 +14,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
 //= require moment
 //= require angular
 //= require angular-rails-templates
@@ -22,15 +21,14 @@
 //= require angular-resource
 //= require angular-animate
 //= require angular-ui-sortable
-
-
+//= require angular-bootstrap-datetimepicker/src/js/datetimepicker
 //= require ng-token-auth
 //= require angular-cookie
 //= require angular-toastr
 //= require angular-loading-bar
-
+//= require lodash/dist/lodash
 //= require ng-file-upload
-
+//= require todo
 //= require_tree ./services
 //= require_tree ./controllers
 //= require_tree ./directives

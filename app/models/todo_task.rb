@@ -1,7 +1,8 @@
 class TodoTask < ActiveRecord::Base
-  belongs_to :todo_list
+  validates :todo_list, :content, presence: true
 
-  def completed?
-  	!completed_at.blank?
-  end
+  belongs_to :todo_list
+  has_many :todo_comments, dependent: :destroy
+
+  default_scope { order(completed_at: :asc, priority: :asc) }
 end

@@ -13,9 +13,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
-gem 'devise_token_auth'
+gem 'devise_token_auth', '~> 0.1.38'
 gem 'omniauth'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.2'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'cancancan', '~> 1.10'
@@ -28,6 +28,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
 end
@@ -35,5 +39,8 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'better_errors'
 end
 

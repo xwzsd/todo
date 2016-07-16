@@ -35,7 +35,7 @@ h2, h3 {
   border-right: double 4px #efdadf;
 }
 
-.project-options {
+.todo_list-options {
   color: #98b0d2;
   .glyphicon {
     cursor: pointer;
@@ -46,7 +46,7 @@ h2, h3 {
   }
 }
 
-.options-task {
+.options-todo_task {
   color: #999;
   border-left: 1px solid #e7ebea;
   width: 130px;
@@ -82,29 +82,29 @@ div.editing {
   }
 }
 
-.panel, .empty-project {
+.panel, .empty-todo_list {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   .panel-heading {
     border-radius: 0;
-    background: #3d60a1 asset-url('bg-project-head.png') repeat-x 0 0;
+    background: #3d60a1 asset-url('bg-todo_list-head.png') repeat-x 0 0;
     height: 45px;
     vertical-align: center;
     padding-top: 12px;
   }
-  .new-task {
+  .new-todo_task {
     height: 49px;
     padding: 10px;
-    background: asset-url('bg-task-form.png') repeat-x 0 0;
+    background: asset-url('bg-todo_task-form.png') repeat-x 0 0;
     .btn-success {
       width: 90px;
     }
   }
 }
 
-form .task-input {
+form .todo_task-input {
   margin-bottom: 0px;
 }
 
@@ -130,11 +130,11 @@ form .task-input {
 }
 
 .btn-success {
-  background: asset-url('bg-task-btn.png') repeat-x 0 0;
+  background: asset-url('bg-todo_task-btn.png') repeat-x 0 0;
 }
 
 .btn-primary {
-  background: asset-url('bg-project-btn.png') repeat-x 0 0;
+  background: asset-url('bg-todo_list-btn.png') repeat-x 0 0;
 }
 
 .nav li > a:hover,
@@ -155,14 +155,14 @@ form .task-input {
   border-radius: 3px;
 }
 
-.comments {
+.todo_comments {
   padding: 10px;
   display: none;
   .delete {
     color: red;
     cursor: pointer;
   }
-  .comment {
+  .todo_comment {
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -173,11 +173,11 @@ form .task-input {
     margin-bottom: 10px;
     resize: vertical;
   }
-  .attachments {
+  .todo_attachments {
     margin: 0;
     font-size: 12px;
   }
-  .new-attachments {
+  .new-todo_attachments {
     margin: 5px;
     font-size: 12px;
     a {
@@ -186,7 +186,7 @@ form .task-input {
   }
 }
 
-.comments-on {
+.todo_comments-on {
   display: inline;
 }
 

@@ -6,7 +6,8 @@
     <li ng-hide='user.signedIn'>
       <a href='#/signup'>Sign up</a>
     </li>
-    <li ng-show='user.signedIn'></li>
+    <li ng-show='user.signedIn'>
+      <a href='' ng-click='handleSignOutBtnClick()'>Sign out</a>
+    </li>
   </ul>
 </div>
-<a href='' ng-click='handleSignOutBtnClick()'>Sign out</a>

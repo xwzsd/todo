@@ -5,7 +5,7 @@ todoApp.controller('SessionController', ['$scope', '$state', '$auth', 'toastr',
     });
 
     $scope.$on('auth:login-success', function() {
-      $state.go('projects');
+      $state.go('todo_lists');
       toastr.success('Signed in successfully.');
     });
 
