@@ -1,0 +1,13 @@
+<div class='collapse navbar-collapse pull-right' ng-controller='SessionController'>
+  <ul class='nav navbar-nav'>
+    <li ng-hide='user.signedIn'>
+      <a href='#/signin'>Sign in</a>
+    </li>
+    <li ng-hide='user.signedIn'>
+      <a href='#/signup'>Sign up</a>
+    </li>
+    <li ng-show='user.signedIn'>
+      <a href='' ng-click='handleSignOutBtnClick()'>Sign out</a>
+    </li>
+  </ul>
+</div>
