@@ -9,7 +9,7 @@ var todoApp = angular.module('todoApp', [
   'ui.bootstrap.datetimepicker',
   'ng-token-auth',
   'ngFileUpload'
-]);
+  ]);
 
 todoApp.config([
   '$stateProvider',

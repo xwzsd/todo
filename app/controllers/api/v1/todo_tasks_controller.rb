@@ -24,7 +24,7 @@ module Api
 
       def todo_task_params
         params.permit(:content, :completed_at, :priority, :due_date)
-	  end
+	    end
     end
   end
 end

@@ -1,5 +1,5 @@
 <div class='col-sm-8 col-sm-offset-2'>
-  <div ng-model='todo_list' ui-sortable='sortableOptions'>
+  <div ng-model='todo_lists' ui-sortable='sortableOptions'>
     <div class='panel panel-primary' ng-repeat='todo_list in todo_lists'>
       <div class='panel-heading' id='todo_list-{{todo_list.id}}' ng-mouseleave='optionsTodoList = false' ng-mouseover='optionsTodoList = true'>
         <div class='panel-title'>
@@ -28,20 +28,20 @@
       <table class='table' ng-controller='TodoTaskController as todo_taskCtrl'>
         <tbody ng-model='todo_list.todo_tasks' ui-sortable='sortableOptions'>
           <tr id='todo_task-{{todo_task.id}}' ng-class="{'not-sortable':todo_task.completed_at}" ng-mouseleave='optionsTodoTask = false' ng-mouseover='optionsTodoTask = true' ng-repeat="todo_task in todo_list.todo_tasks | orderBy: 'completed_at'">
-            <td class='complete'>
+            <td class='completed_at'>
               <input ng-click='updateTodoTask(todo_task)' ng-model='todo_task.completed_at' type='checkbox'>
             </td>
             <td class='todo_task-content'>
               <div class='input-group-sm'>
                 <span class='view' ng-dblclick='todo_taskEdit()'>
-                  {{todo_task.content}}
-                  <span class='due_date' ng-show='todo_task.due_date'>{{(todo_task.due_date|date:'yyyy-MM-dd')}}</span>
+                {{todo_task.content}}
+                  <span class='due_date' ng-show='todo_task.due_date'>{{(todo_task.due_date | date:'yyyy-MM-dd')}}</span>
                 </span>
                 <input autocomplete='off' autofocus class='form-control input-sm edit' id='edit-todo_task' ng-keyup='editTodoTaskOnEnter(todo_task)' ng-model='todo_task.content' type='text'>
               </div>
-              <div class='todo_comments' ng-controller='TodoCommentTodoController as TodoCommentCtrl'>
+              <div class='todo_comments' ng-controller='TodoCommentController as TodoCommentCtrl'>
                 <div class='todo_comment' id='todo_comment-{{todo_comment.id}}' ng-mouseleave='optionsTodoComment = false' ng-mouseover='optionsTodoComment = true' ng-repeat='todo_comment in todo_task.todo_comments'>
-                  {{todo_comment.body}}
+                {{todo_comment.body}}
                   <div class='pull-right' ng-show='optionsTodoComment'>
                     <span class='delete' id='del-todo_comment-{{todo_comment.id}}' ng-click='deleteTodoComment(todo_task.id, todo_comment)'>&times;</span>
                   </div>
@@ -72,14 +72,14 @@
             <td class='options-todo_task'>
               <div class='dropdown' ng-show='optionsTodoTask'>
                 <span class='glyphicon glyphicon-pencil' id='edit-todo_task-{{todo_task.id}}' ng-click='toggleTodoTaskEdit()'></span>
-                <span class='glyphicon glyphicon-comment' id='comment-todo_task-{{todo_task.id}}' ng-click='toggleTodoComments()'></span>
+                <span class='glyphicon glyphicon-comment' id='todo_comment-todo_task-{{todo_task.id}}' ng-click='toggleTodoComments()'></span>
                 <span class='glyphicon glyphicon-time dropdown-toggle' data-toggle='dropdown' id='due-todo_task-{{todo_task.id}}'></span>
                 <span class='glyphicon glyphicon-move'></span>
                 <span class='glyphicon glyphicon-trash' id='del-todo_task-{{todo_task.id}}' ng-click='deleteTodoTask(todo_list.id, todo_task)'></span>
                 <ul class='dropdown-menu'>
                   <datetimepicker datetimepicker-config="{ dropdownSelector: '#due-todo_task-{{todo_task.id}}', minView: 'day' }" ng-model='todo_task.due_date' on-set-time='setDue(todo_task)'></datetimepicker>
                 </ul>
-              </div>
+              </div>                      
             </td>
           </tr>
         </tbody>

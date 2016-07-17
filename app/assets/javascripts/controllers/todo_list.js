@@ -34,7 +34,7 @@ todoApp.controller('TodoListController', ['$scope', '$http', 'todo_listFactory',
       };
       if(event.keyCode == 13 && todo_list.title) {
         todo_listFactory.updateTodoList(todo_list);
-        $scope.todo_listEdit();
+        $scope.TodoListEdit();
       }
     };
 

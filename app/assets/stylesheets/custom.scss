@@ -19,17 +19,17 @@ h2, h3 {
   text-align: center;
 }
 
-.complete-true {
+.completed_at-true {
   text-decoration: line-through;
   color: grey;
 }
 
-.complete-false {
+.completed_at-false {
   text-decoration: underline;
   color: red;
 }
 
-.complete {
+.completed_at {
   width: 40px;
   text-align: center;
   border-right: double 4px #efdadf;

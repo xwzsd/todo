@@ -43,13 +43,13 @@ todoApp.controller('TodoTaskController', ['$scope', '$http', 'todo_listFactory',
     };
 
     $scope.toggleTodoTaskEdit = function() {
-      $(event.target).closest('tr').find('td.task-content div').
+      $(event.target).closest('tr').find('td.todo_task-content div').
         toggleClass('editing');
     };
 
     $scope.toggleTodoComments = function() {
-      $(event.target).closest('tr').find('td.task-content div.comments').
-        toggleClass('comments-on');
+      $(event.target).closest('tr').find('td.todo_task-content div.todo_comments').
+        toggleClass('todo_comments-on');
     };
 
     $scope.setDue = function(todo_task) {
