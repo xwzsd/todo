@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
 gem 'rails', '4.2.6'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -44,3 +44,15 @@ group :development do
   gem 'better_errors'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'launchy'
+  gem 'codeclimate-test-reporter'
+  gem 'poltergeist'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
