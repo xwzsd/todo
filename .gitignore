@@ -9,6 +9,11 @@
 /log/*
 /log/*.log
 /tmp
+/coverage
+
+/.ruby-gemset
+/.powenv
+/.env
 
 # Игнорирование прочих ненужных файлов.
 database.yml

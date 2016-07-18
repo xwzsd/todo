@@ -1,4 +1,19 @@
+---
+development:
+  cloud_name: dmrxjjmxw
+  api_key: '951888135828544'
+  api_secret: FzjCROq1BYt4-5MlXiUPIEhQnbM
+  enhance_image_tag: true
+  static_image_support: false
 production:
-  cloud_name: <%= ENV['CLOUD_NAME'] %>
-  api_key: <%= ENV['CLOUD_KEY'] %>
-  api_secret: <%= ENV['CLOUD_SECRET'] %>
+  cloud_name: dmrxjjmxw
+  api_key: '951888135828544'
+  api_secret: FzjCROq1BYt4-5MlXiUPIEhQnbM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dmrxjjmxw
+  api_key: '951888135828544'
+  api_secret: FzjCROq1BYt4-5MlXiUPIEhQnbM
+  enhance_image_tag: true
+  static_image_support: false
