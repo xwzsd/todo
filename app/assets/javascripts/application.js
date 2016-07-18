@@ -22,6 +22,7 @@
 //= require angular-animate
 //= require angular-ui-sortable
 //= require angular-bootstrap-datetimepicker/src/js/datetimepicker
+//= require angular-bootstrap-datetimepicker/src/js/datetimepicker.templates
 //= require ng-token-auth
 //= require angular-cookie
 //= require angular-toastr
