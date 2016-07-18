@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'devise_token_auth', '~> 0.1.38'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'carrierwave'
 gem 'cloudinary'
