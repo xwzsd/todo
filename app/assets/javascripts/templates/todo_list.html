@@ -73,12 +73,12 @@
               <div class='dropdown' ng-show='optionsTodoTask'>
                 <span class='glyphicon glyphicon-pencil' id='edit-todo_task-{{todo_task.id}}' ng-click='toggleTodoTaskEdit()'></span>
                 <span class='glyphicon glyphicon-comment' id='todo_comment-todo_task-{{todo_task.id}}' ng-click='toggleTodoComments()'></span>
-                <span class='glyphicon glyphicon-time dropdown-toggle' data-toggle='dropdown' id='due-todo_task-{{todo_task.id}}'></span>
+                <span class='glyphicon glyphicon-time dropdown-toggle' data-toggle='dropdown' id='due-todo_task+todo_task.id'></span>
+                <ul class='dropdown-menu'>
+                <datetimepicker datetimepicker-config="{ dropdownSelector: '#due-todo_task+todo_task.id', minView: 'day' }" ng-model='todo_task.due_date' on-set-time='setDue(todo_task)'</datetimepicker>
+                </ul>
                 <span class='glyphicon glyphicon-move'></span>
                 <span class='glyphicon glyphicon-trash' id='del-todo_task-{{todo_task.id}}' ng-click='deleteTodoTask(todo_list.id, todo_task)'></span>
-                <ul class='dropdown-menu'>
-                  <datetimepicker datetimepicker-config="{ dropdownSelector: '#due-todo_task-{{todo_task.id}}', minView: 'day' }" ng-model='todo_task.due_date' on-set-time='setDue(todo_task)'></datetimepicker>
-                </ul>
               </div>                      
             </td>
           </tr>
