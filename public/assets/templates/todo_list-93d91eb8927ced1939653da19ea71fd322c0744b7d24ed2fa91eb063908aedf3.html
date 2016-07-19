@@ -40,7 +40,7 @@
                 <input autocomplete='off' autofocus class='form-control input-sm edit' id='edit-todo_task' ng-keyup='editTodoTaskOnEnter(todo_task)' ng-model='todo_task.content' type='text'>
               </div>
               <div class='todo_comments' ng-controller='TodoCommentController as TodoCommentCtrl'>
-                <div class='todo_comment' id='todo_comment-{{todo_comment.id}}' ng-mouseleave='optionsTodoComment = false' ng-mouseover='optionsTodoComment = true' ng-repeat='todo_comment in todo_task.todo_comments'>
+                <div class='todo_comment' id='todo_comment-{{todo_comment.id}}' ng-mouseleave='optionsTodoComment = false' ng-mouseover='optionsTodoComment = true' ng-repeat="todo_comment in todo_task.todo_comments">
                 {{todo_comment.body}}
                   <div class='pull-right' ng-show='optionsTodoComment'>
                     <span class='delete' id='del-todo_comment-{{todo_comment.id}}' ng-click='deleteTodoComment(todo_task.id, todo_comment)'>&times;</span>
