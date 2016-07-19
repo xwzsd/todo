@@ -22,7 +22,6 @@ doc/
 /public/uploads
 *.swp
 *~
-.project
 .DS_Store
 .idea
 .secret
