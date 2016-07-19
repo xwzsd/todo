@@ -13,7 +13,7 @@ todoApp.controller('TodoCommentController', ['$scope', '$http', 'todo_listFactor
               file: file
             }).success(function(data) {
               $scope.files = [];
-              todo_listFactory.getTodoTaskComments().success(function(data) {
+              todo_listFactory.getTodoTaskTodoComments().success(function(data) {
                 $scope.todo_task.todo_comments = data;
               });
             });

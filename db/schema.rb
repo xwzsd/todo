@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160711122851) do
     t.integer  "todo_list_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.datetime "completed_at"
+    t.boolean  "completed_at"
   end
 
   add_index "todo_tasks", ["todo_list_id"], name: "index_todo_tasks_on_todo_list_id", using: :btree

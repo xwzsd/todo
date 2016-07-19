@@ -13,7 +13,9 @@ module Api
       end
 
       def update
-        respond_with @todo_task.update(todo_task_params)
+        respond_with do |format|
+          format.json { render(json: @todo_task.update(todo_task_params), status: 200) }
+        end
       end
 
       def destroy

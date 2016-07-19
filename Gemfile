@@ -33,8 +33,8 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'dotenv-rails'
-  gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -46,8 +46,8 @@ group :development do
 end
 
 group :test do
-  gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'capybara'
   gem 'faker'
   gem 'launchy'
   gem 'codeclimate-test-reporter'
