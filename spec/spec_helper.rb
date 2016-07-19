@@ -1,3 +1,5 @@
+require 'capybara/rspec'
+require "database_cleaner"
 require "factory_girl_rails"
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start

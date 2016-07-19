@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	describe 'validation' do
+		it { should validate_presence_of(:email) }
+		it { should validate_presence_of(:password) }
+		it { should validate_uniqueness_of(:email).case_insensitive }
+	end
+
+	describe 'association' do
+		it { should have_many(:todo_lists).dependent(:destroy) }
+	end
 end

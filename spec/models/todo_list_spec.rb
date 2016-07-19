@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe TodoList, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+	describe 'validation' do
+		it { should validate_presence_of :user }
+		it { should validate_presence_of :title }
+	end
+
+	describe 'assoviations' do
+		it { should belong_to :user }
+		it { should have_many(:todo_tasks).dependent(:destroy) }
+	end
 end

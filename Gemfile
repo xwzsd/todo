@@ -30,11 +30,11 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'dotenv-rails'
   gem 'selenium-webdriver'
-  gem 'database_cleaner'
 end
 
 group :development do
